@@ -1,47 +1,68 @@
 
 
-function izracunajGodine(){
+function izracunajGodine() {
 
     console.clear();
 
-    const satiEkspert= 10000;
+    const satiPocetniik = 2000;
 
-    const satiPocetniik= 2000;
+    const satiEkspert = 10000;
 
     const radnoVreme = 8;
 
     let razlikaSati = satiEkspert - satiPocetniik;
 
-    console.log(razlikaSati);
+    console.log('razlikaSati = ' ,razlikaSati);
 
-    brojSatiDnevno= document.getElementById('unos').value;
+    brojSatiDnevno = document.getElementById('unos').value;
 
-    // console.log(document.getElementById('unos'));
+   
 
-    brojDanaZaPocetnika= satiPocetniik / brojSatiDnevno;
+    ukupnoDanaDoPocetnika = satiPocetniik / brojSatiDnevno;
 
-    console.log(brojDanaZaPocetnika);
+    console.log('brojDanaZaPocetnika=', ukupnoDanaDoPocetnika);
 
-    brojDanaDoEksperta = razlikaSati / radnoVreme + brojDanaZaPocetnika;
+    ukupnoDanaDoEksperta = razlikaSati / radnoVreme + ukupnoDanaDoPocetnika;
 
-    console.log(brojDanaDoEksperta);
+    console.log('brojDanaDoEksperta=', ukupnoDanaDoEksperta);
 
-    brojGodina = (brojDanaZaPocetnika / 365 );
 
-    brojGodina = brojGodina.toFixed(2);
+    let godineDoPocetnika = Math.floor(ukupnoDanaDoPocetnika / 365);
 
-    brojGodinaDoEksperta = (brojDanaDoEksperta / 365);
+    let meseciDoPocetnika = Math.floor((ukupnoDanaDoPocetnika % 365) / 30);
 
-    brojGodinaDoEksperta = brojGodinaDoEksperta.toFixed(2);
+    let daniDoPocetnika = (ukupnoDanaDoPocetnika % 365) % 30;
 
-    // console.log('broj godina ucenja do pocetnika je ', brojGodina);
+   
 
-    // console.log('broj godina ucenja do eksperta je ', brojGodinaDoEksperta);
+    let godinaDoEksperta = Math.floor(ukupnoDanaDoEksperta / 365);
 
-    document.getElementById('brojGodina').innerText = 'broj godina ucenja do pocetnika je ' + brojGodina;
+    let meseciDoEksperta = Math.floor((ukupnoDanaDoEksperta % 365) / 30);
 
-    document.getElementById('brojGodinaDoEksperta').innerText = 'broj godina ucenja do eksperta je ' + brojGodinaDoEksperta;
+    let daniDoEksperta = (ukupnoDanaDoEksperta % 365) % 30;
+
+
+    
+
+    
+    document.getElementById('brojGodina').innerText = 'vreme ucenja do pocetnika je ' + godineDoPocetnika + ' godine ' + meseciDoPocetnika + ' meseci ' + daniDoPocetnika + " dana"; 
+
+    document.getElementById('brojGodinaDoEksperta').innerText = 'vreme ucenja do eksperta je ' + godinaDoEksperta + ' godine ' + meseciDoEksperta + ' meseci ' + daniDoEksperta + " dana"; 
 }
+
+function brojDanaUGodine(ukupnoDana) {
+    const uGodiniBrojDana = 365;
+    
+
+
+    
+
+
+
+
+
+}
+
 
 const dugme = document.getElementById('dugme');
 
